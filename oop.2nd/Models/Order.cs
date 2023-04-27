@@ -15,7 +15,15 @@ namespace oop._2nd.Models
 
         public Order()
         {
+            double price1 = 55.5, price2 = 49.06;
+
+            Book harryPotter = new Book("harry potter and the philosopher's stone", "Joanne Rowling", 1000, price1);
+            Book lotr = new Book("The Lord of the Rings", "J. R. R. Tolkien", 1200, price2);
+
+
             Library library = new Library();
+            library.AddBook(harryPotter);
+            library.AddBook(lotr);
             Book[] libBooks = library.FindAllBooks(1);
             Books.AddRange(libBooks);
         }

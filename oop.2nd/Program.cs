@@ -37,17 +37,7 @@ Code:            {lotr.Code}
         lib.AddBook(harryPotter);
         lib.AddBook(lotr);
 
-        Book book1 = lib.GetBook(1);
-
-        Console.WriteLine($@"
-Book id:         {book1.Id}
-Book Name:       {book1.Name}
-Author name:     {book1.AuthorName}
-Pgae count:      {book1.PageCount}
-Price:           {book1.Price}
-Code:            {book1.Code}
-");
-
+Console.WriteLine("Library.GetBook(2): \n");
 
         Book book2 = lib.GetBook(2);
         Console.WriteLine($@"
@@ -60,8 +50,9 @@ Code:            {book2.Code}
 ");
 
 
+Console.WriteLine("Library.FindAllBooks(1): \n");
 
-        Book[] books = lib.FindAllBooks(12);
+        Book[] books = lib.FindAllBooks(1);
 
         foreach (var book in books)
         {
@@ -75,21 +66,17 @@ Code:            {book.Code}
 ");
         }
 
+Console.WriteLine("Library.RemoveAllBooks(): ");
+
         lib.RemoveAllBooks();
 
-        Console.WriteLine(lib.FindAllBooks(0).Length);
+        Console.WriteLine("Book count: "+lib.FindAllBooks(0).Length);
 
-
-        Console.WriteLine("------------Order-----------------");
-
-
+//-------------------------------------------------------------------
+Console.WriteLine("\n\norder.Sale():");
         Order order = new Order();
 
         order.Sale();
-
-
-
-
 
     }
 

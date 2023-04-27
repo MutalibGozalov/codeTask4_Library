@@ -23,13 +23,17 @@ namespace oop._2nd.Models
         }
        public Book[] FindAllBooks(double price)
         {
-            Book[] books = Array.FindAll(this.libBooks, b => b.Price>0);
-
+            Book[] books = new Book[0]; 
+            if (libBooks.Length != 0)
+            {
+                books = Array.FindAll(this.libBooks, b => b.Id > price);//is Book {Price: > 32});
+            }
             return books;
         }
        public void RemoveAllBooks()
         {
             Array.Clear(this.libBooks);
+            Array.Resize(ref this.libBooks, 0);
         }
     }
 }
